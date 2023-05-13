@@ -1,0 +1,83 @@
+body {
+   background-image: url(../Bilder/beisl_start.jpeg);
+   background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover;
+  }
+
+  /* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+    /* background-color: antiquewhite;*/
+  }
+  
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+
+  }
+  * {
+    box-sizing: border-box;
+  }
+  #navbar {
+    overflow: hidden;
+    /*background-color: #333;*/
+    background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+    position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: yellow;
+  padding: 50px;
+  font-size: 20px;
+
+  }
+
+
+  .flex-container {
+    width:500px;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: nowrap;
+    color:white;
+    /* background-color: DodgerBlue; */
+  }
+  .flex-container1 {
+    width:500px;
+    margin-top: 20px;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: nowrap;
+    color:white;
+    /* background-color: DodgerBlue; */
+  }
+  
+  .flex-container > div {
+    /* background-color: #f1f1f1; */
+    width:fit-content;
+    margin: 5px;
+    text-align: center;
+    /*line-height: 60px;*/
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right:5px;
+    text-align: left;
+  }
+  .begleittext {
+    
+    margin: 5px;
+    text-align: left;
+    /*line-height: 60px;*/
+    font-size: 15px;
+    font-style:italic;
+    padding-left: 5px;
+    padding-right:5px;
+    text-align: left;
+  }
+  .titlebox{
+    font-weight: bold;
+  }
