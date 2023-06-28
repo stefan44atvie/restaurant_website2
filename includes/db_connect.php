@@ -3,7 +3,7 @@
     $hostname="localhost";
     $username="root";
     $password="";
-    $databasename="PSVBeisl";
+    $databasename="Beisl";
 
     $connect = mysqli_connect($hostname,$username,$password,$databasename);
 

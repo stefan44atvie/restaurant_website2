@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Erstellungszeit: 06. Mai 2023 um 14:39
+-- Erstellungszeit: 28. Jun 2023 um 15:57
 -- Server-Version: 10.4.27-MariaDB
 -- PHP-Version: 8.2.0
 
@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Datenbank: `PSVBeisl`
+-- Datenbank: `Beisl`
 --
-CREATE DATABASE IF NOT EXISTS `PSVBeisl` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `PSVBeisl`;
+CREATE DATABASE IF NOT EXISTS `Beisl` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `Beisl`;
 
 -- --------------------------------------------------------
 
@@ -138,6 +138,27 @@ INSERT INTO `openhours_minute` (`minute_id`, `minute`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `speisekarte`
+--
+
+CREATE TABLE `speisekarte` (
+  `speisekarte_id` int(11) NOT NULL,
+  `speisekarte` varchar(500) DEFAULT NULL,
+  `speise_date` date DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Daten für Tabelle `speisekarte`
+--
+
+INSERT INTO `speisekarte` (`speisekarte_id`, `speisekarte`, `speise_date`) VALUES
+(1, 'wochenkarte.pdf', '2023-05-07'),
+(2, 'speisekarte.pdf', '2023-05-07'),
+(3, 'speisekarte.pdf', '2023-05-08');
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `standardtexte`
 --
 
@@ -179,6 +200,15 @@ CREATE TABLE `status` (
 --
 
 INSERT INTO `status` (`status_id`, `status`) VALUES
+(1, 'admin'),
+(2, 'superadmin'),
+(3, 'user'),
+(1, 'admin'),
+(2, 'superadmin'),
+(3, 'user'),
+(1, 'admin'),
+(2, 'superadmin'),
+(3, 'user'),
 (1, 'admin'),
 (2, 'superadmin'),
 (3, 'user');
@@ -272,7 +302,6 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`username`, `id`, `password`, `email`, `picture`, `status`, `lastactivity`) VALUES
 ('stefan', 39, '96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e', 'stefan@ruedi.at', '642c966f37962.jpg', 'adm', '2023-04-05 18:26:04'),
-('Anton', 105, '96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e', 'user@user.at', 'avatar.jpg', 'user', '2023-04-05 18:26:04'),
 ('Stefan', 106, '96cae35ce8a9b0244178bf28e4966c2ce1b8385723a96a6b838858cdd6ca0a1e', 'stefan@digitaleseele.at', '6444d5e095462.jpg', 'user', '2023-04-23 06:53:20');
 
 -- --------------------------------------------------------
@@ -292,38 +321,21 @@ CREATE TABLE `wochenkarte` (
 --
 
 INSERT INTO `wochenkarte` (`wochenkarte_id`, `wochenkarte`, `wochen_date`) VALUES
-(241, 'wochenkarte.pdf', '2023-03-31'),
-(242, 'wochenkarte.pdf', '2023-03-31'),
-(243, 'document.pdf', '2023-03-31'),
-(244, 'wochenkarte.pdf', '2023-03-31'),
-(245, 'document.pdf', '2023-03-31'),
-(246, 'document.pdf', '2023-03-31'),
-(247, 'document.pdf', '2023-04-01'),
-(248, 'wochenkarte.pdf', '2023-04-01'),
-(249, 'wochenkarte.pdf', '2023-04-01'),
-(250, 'wochenkarte.pdf', '2023-04-01'),
-(251, 'document.pdf', '2023-04-01'),
-(252, 'wochenkarte.pdf', '2023-04-01'),
-(253, 'wochenkarte.pdf', '2023-04-01'),
-(254, 'document.pdf', '2023-04-01'),
-(255, 'wochenkarte.pdf', '2023-04-01'),
-(256, 'document.pdf', '2023-04-01'),
-(257, 'wochenkarte.pdf', '2023-04-01'),
-(258, 'wochenkarte.pdf', '2023-04-02'),
-(259, 'wochenkarte.pdf', '2023-04-02'),
-(260, 'wochenkarte.pdf', '2023-04-02'),
-(261, 'wochenkarte.pdf', '2023-04-03'),
-(262, 'wochenkarte.pdf', '2023-04-05'),
-(263, 'wochenkarte.pdf', '2023-04-05'),
-(264, 'document.pdf', '2023-04-05'),
-(265, 'wochenkarte.pdf', '2023-04-05'),
-(266, 'wochenkarte.pdf', '2023-04-06'),
-(267, 'wochenkarte.pdf', '2023-04-12'),
-(268, 'wochenkarte.pdf', '2023-04-15'),
-(269, 'wochenkarte.pdf', '2023-04-26'),
-(270, 'wochenkarte.pdf', '2023-05-05'),
-(271, 'wochenkarte.pdf', '2023-05-05'),
-(272, 'wochenkarte.pdf', '2023-05-05');
+(281, 'wochenkarte.pdf', '2023-05-07'),
+(282, 'wochenkarte.pdf', '2023-05-07'),
+(283, 'wochenkarte.pdf', '2023-05-07'),
+(284, 'wochenkarte.pdf', '2023-05-07'),
+(285, 'wochenkarte.pdf', '2023-05-07'),
+(286, 'wochenkarte.pdf', '2023-05-07'),
+(287, 'wochenkarte.pdf', '2023-05-07'),
+(288, 'wochenkarte.pdf', '2023-05-07'),
+(289, 'wochenkarte.pdf', '2023-05-07'),
+(290, 'wochenkarte.pdf', '2023-05-07'),
+(291, 'wochenkarte.pdf', '2023-05-08'),
+(292, 'wochenkarte.pdf', '2023-05-08'),
+(293, 'wochenkarte.pdf', '2023-05-08'),
+(294, 'wochenkarte.pdf', '2023-05-08'),
+(295, 'wochenkarte.pdf', '2023-05-15');
 
 -- --------------------------------------------------------
 
@@ -380,6 +392,12 @@ ALTER TABLE `openhours_hour`
 --
 ALTER TABLE `openhours_minute`
   ADD PRIMARY KEY (`minute_id`);
+
+--
+-- Indizes für die Tabelle `speisekarte`
+--
+ALTER TABLE `speisekarte`
+  ADD PRIMARY KEY (`speisekarte_id`);
 
 --
 -- Indizes für die Tabelle `standardtexte`
@@ -460,6 +478,12 @@ ALTER TABLE `openhours_minute`
   MODIFY `minute_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT für Tabelle `speisekarte`
+--
+ALTER TABLE `speisekarte`
+  MODIFY `speisekarte_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT für Tabelle `standardtexte`
 --
 ALTER TABLE `standardtexte`
@@ -487,13 +511,13 @@ ALTER TABLE `text_art`
 -- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT für Tabelle `wochenkarte`
 --
 ALTER TABLE `wochenkarte`
-  MODIFY `wochenkarte_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=273;
+  MODIFY `wochenkarte_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=296;
 
 --
 -- AUTO_INCREMENT für Tabelle `Zeiten`
