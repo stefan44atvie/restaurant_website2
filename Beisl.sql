@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Erstellungszeit: 28. Jun 2023 um 15:57
+-- Erstellungszeit: 28. Jun 2023 um 15:59
 -- Server-Version: 10.4.27-MariaDB
 -- PHP-Version: 8.2.0
 
@@ -182,7 +182,7 @@ INSERT INTO `standardtexte` (`stexte_id`, `stext`, `fk_textart`) VALUES
 (57, 'Aktualisieren Sie hier den gewünschten Textbaustein', 10),
 (58, 'Hier kannst du die Details des gewählten Users ansehen und bestimmte Details ändern.', 11),
 (59, 'Hier kannst du dir die bereits vorhandenen Textbausteine ansehen, löschen oder aktualisieren', 5),
-(61, 'Herzlich Willkommen im PSV-Beisl an der Alten Donau', 1);
+(61, 'Herzlich Willkommen an der Alten Donau', 1);
 
 -- --------------------------------------------------------
 
